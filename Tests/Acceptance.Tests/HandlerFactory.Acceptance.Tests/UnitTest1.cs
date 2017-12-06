@@ -8,6 +8,7 @@ namespace HandlerFactory.Acceptance.Tests
         [TestMethod]
         public void TestMethod1()
         {
+
         }
     }
 }

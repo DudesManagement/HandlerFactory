@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Dudes.HandlerFactory.Factory
 {
-    interface IHandlerFactory <T>
+    public interface IHandlerFactory <T>
     {
         /// <summary>
         /// Resolve all the appropriate handler
@@ -28,5 +28,10 @@ namespace Dudes.HandlerFactory.Factory
         /// <param name="handlerFullNameSpace"> The full namespace where we can find the handler </param>
         /// <returns> The corresponding handler object </returns>
         T Resolve(string packageID, Uri feedSource, string handlerFullNameSpace);
+
+        /// <summary>
+        /// Disposing the 
+        /// </summary>
+        void Dispose();
     }
 }
