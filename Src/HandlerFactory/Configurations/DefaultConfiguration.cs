@@ -22,7 +22,7 @@ namespace Dudes.HandlerFactory.Configurations
 
             ConfigurationFileName = ConfigurationConstants.DefaultConfigurationFileName;
 
-            logger.DEBUG(string.Format("Reading configurations from the file \"{0}\" from the directory {1}", ConfigurationFileName, Directory.GetCurrentDirectory()));
+            _logger.DEBUG(string.Format("Reading configurations from the file \"{0}\" from the directory {1}", ConfigurationFileName, Directory.GetCurrentDirectory()));
 
             var builder = new ConfigurationBuilder();
             builder.SetBasePath(Directory.GetCurrentDirectory());
@@ -30,11 +30,11 @@ namespace Dudes.HandlerFactory.Configurations
 
             Configuration = builder.Build();
 
-            logger.DEBUG(string.Format("Reading and saving the following key-value pair configurations, Key: \"{0}\", Value: \"{1}\"", feedURL, Configuration[ConfigurationConstants.FeedURL]));
+            _logger.DEBUG(string.Format("Reading and saving the following key-value pair configurations, Key: \"{0}\", Value: \"{1}\"", feedURL, Configuration[ConfigurationConstants.FeedURL]));
             feedURL = Configuration[ConfigurationConstants.FeedURL];
-            logger.DEBUG(string.Format("Reading and saving the following key-value pair configurations, Key: \"{0}\", Value: \"{1}\"", packageID, Configuration[ConfigurationConstants.PackageID]));
+            _logger.DEBUG(string.Format("Reading and saving the following key-value pair configurations, Key: \"{0}\", Value: \"{1}\"", packageID, Configuration[ConfigurationConstants.PackageID]));
             packageID = Configuration[ConfigurationConstants.PackageID];
-            logger.DEBUG(string.Format("Reading and saving the following key-value pair configurations, Key: \"{0}\", Value: \"{1}\"", version, Configuration[ConfigurationConstants.Version]));
+            _logger.DEBUG(string.Format("Reading and saving the following key-value pair configurations, Key: \"{0}\", Value: \"{1}\"", version, Configuration[ConfigurationConstants.Version]));
             version = Configuration[ConfigurationConstants.Version];
 
         }
