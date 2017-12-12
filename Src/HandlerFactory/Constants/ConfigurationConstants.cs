@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Dudes.HandlerFactory.Constants
+namespace Horus.HandlerFactory.Constants
 {
     internal class ConfigurationConstants
     {

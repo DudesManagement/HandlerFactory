@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Dudes.HandlerFactory.Factory
+namespace Horus.HandlerFactory.Factory
 {
     public class NullHandlerFactory : IHandlerFactory<object>
     {

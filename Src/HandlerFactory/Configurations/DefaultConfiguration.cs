@@ -1,10 +1,10 @@
-﻿using Dudes.HandlerFactory.Constants;
-using Dudes.Logger;
+﻿using Horus.HandlerFactory.Constants;
+using Horus.Logger;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
 
-namespace Dudes.HandlerFactory.Configurations
+namespace Horus.HandlerFactory.Configurations
 {
     public class DefaultConfiguration : IConfiguration
     {

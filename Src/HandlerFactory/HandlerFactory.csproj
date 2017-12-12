@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <NuspecFile>$(MSBuildThisFileDirectory)$(MSBuildProjectName).nuspec</NuspecFile>
-    <AssemblyName>Dudes.HandlerFactory</AssemblyName>
-    <RootNamespace>Dudes.HandlerFactory</RootNamespace>
+    <AssemblyName>Horus.HandlerFactory</AssemblyName>
+    <RootNamespace>Horus.HandlerFactory</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -13,7 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dudes.Logger" Version="1.0.45" />
+    <PackageReference Include="Horus.Logger" Version="1.0.48" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />

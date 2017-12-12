@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-    <id>Dudes.HandlerFactory</id>
+    <id>Horus.HandlerFactory</id>
       <version>1.0.0</version>
     <authors>Dudes</authors>
     <description>Choose and resolve handlers on the runtime and deployment time</description>

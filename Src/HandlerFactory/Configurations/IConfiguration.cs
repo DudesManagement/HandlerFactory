@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Dudes.HandlerFactory.Configurations
+namespace Horus.HandlerFactory.Configurations
 {
     internal interface IConfiguration
     {

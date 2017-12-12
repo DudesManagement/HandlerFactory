@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Dudes.HandlerFactory.Configurations;
-using Dudes.Logger;
+using Horus.HandlerFactory.Configurations;
+using Horus.Logger;
 
 namespace HandlerFactory.Unit.Tests
 {
