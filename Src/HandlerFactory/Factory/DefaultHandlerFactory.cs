@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Horus.HandlerFactory.Configurations;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,11 @@ namespace Horus.HandlerFactory.Factory
 {
     class DefaultHandlerFactory<T> : IHandlerFactory<T>
     {
+        private readonly IConfiguration _configuration;
+        DefaultHandlerFactory(IConfiguration configuration)
+        {
+            _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+        }
         public void Dispose()
         {
             throw new NotImplementedException();
