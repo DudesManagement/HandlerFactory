@@ -1,16 +1,15 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Horus.HandlerFactory.Configurations;
-using Horus.Logger;
+using NUnit.Framework;
 
 namespace HandlerFactory.Unit.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class UnitTest1
     {
-        [TestMethod]
+        [Test]
         public void TestMethod1()
         {
-            DefaultConfiguration x = new DefaultConfiguration(new NullLogger());
+            
+            Assert.Pass();
         }
     }
 }
