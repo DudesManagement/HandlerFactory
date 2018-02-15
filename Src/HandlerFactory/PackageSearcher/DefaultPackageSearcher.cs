@@ -22,6 +22,15 @@ namespace Horus.HandlerFactory.PackageSearcher
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
         }
         
+        public async Task<IPackageSearchMetadata> GetSinglePackageMetaDataAsync()
+        {
+            var enumerableResult = await GetPackagesMetaDataAsync();
+            var enumerator = enumerableResult.GetEnumerator();
+            // move the pointer to the first element
+            enumerator.MoveNext();
+            return enumerator.Current;
+        }
+
         public async Task<IEnumerable<IPackageSearchMetadata>> GetPackagesMetaDataAsync()
         {
             _logger.DEBUG($"started searching for packages metadata from the providers, using V3 and V2 protocols");

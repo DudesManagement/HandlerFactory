@@ -1,36 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <NuspecFile>$(MSBuildThisFileDirectory)$(MSBuildProjectName).nuspec</NuspecFile>
     <AssemblyName>Horus.HandlerFactory</AssemblyName>
     <RootNamespace>Horus.HandlerFactory</RootNamespace>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Horus.Common.Tools" />
-    <PackageReference Include="Horus.Logger" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-    <PackageReference Include="NuGet.Client" Version="4.2.0" />
-    <PackageReference Include="NuGet.PackageManagement" Version="4.5.0" />
-    <PackageReference Include="NuGet.Packaging" Version="4.5.0" />
-    <PackageReference Include="NuGet.ProjectManagement" Version="4.2.0" />
-    <PackageReference Include="NuGet.Protocol.Core.v2" Version="3.5.0" />
-    <PackageReference Include="NuGet.Protocol.Core.v3" Version="4.2.0" />
+    <PackageReference Include="Horus.Common.Tools"/>
+    <PackageReference Include="Horus.Logger"/>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0"/>
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.0.0"/>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0"/>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3"/>
+    <PackageReference Include="NuGet.Client" Version="4.2.0"/>
+    <PackageReference Include="NuGet.PackageManagement" Version="4.5.0"/>
+    <PackageReference Include="NuGet.Packaging" Version="4.5.0"/>
+    <PackageReference Include="NuGet.ProjectManagement" Version="4.2.0"/>
+    <PackageReference Include="NuGet.Protocol.Core.v2" Version="3.5.0"/>
+    <PackageReference Include="NuGet.Protocol.Core.v3" Version="4.2.0"/>
+    <PackageReference Include="NuGet.Packaging.Core.Types" Version="4.2.0"/>
   </ItemGroup>
-
   <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
 </Project>
