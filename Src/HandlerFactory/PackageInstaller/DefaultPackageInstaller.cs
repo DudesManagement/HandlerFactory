@@ -4,11 +4,10 @@ using Horus.HandlerFactory.PackageSearcher;
 using NuGet.Common;
 using NuGet.Configuration;
 using NuGet.PackageManagement;
-using NuGet.Packaging.Core;
-using NuGet.ProjectManagement;
 using NuGet.Protocol;
 using NuGet.Protocol.Core.Types;
 using NuGet.Protocol.Core.v2;
+using NuGet.ProjectManagement;
 
 namespace Horus.HandlerFactory.PackageInstaller
 {
@@ -29,7 +28,8 @@ namespace Horus.HandlerFactory.PackageInstaller
             PackageSourceProvider packageSourceProvider = new PackageSourceProvider(settings);
             ISourceRepositoryProvider sourceRepositoryProvider =
             new SourceRepositoryProvider(packageSourceProvider, GetV3AndV2Providers());
-            NuGet.ProjectManagement.NuGetProject project = new NuGet.ProjectManagement.FolderNuGetProject(rootPath);
+            var project = new FolderNuGetProject(rootPath);
+            string packagesPath = "...";
             NuGetPackageManager packageManager = new NuGetPackageManager(sourceRepositoryProvider, settings, packagesPath)
             {
                 PackagesFolderNuGetProject = project
