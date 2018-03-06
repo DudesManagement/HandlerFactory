@@ -8,6 +8,10 @@ using NuGet.Protocol;
 using NuGet.Protocol.Core.Types;
 using NuGet.Protocol.Core.v2;
 using NuGet.ProjectManagement;
+using NuGet.Resolver;
+using Horus.HandlerFactory.ProjectContext;
+using System.Linq;
+using System.Threading;
 
 namespace Horus.HandlerFactory.PackageInstaller
 {
@@ -34,6 +38,19 @@ namespace Horus.HandlerFactory.PackageInstaller
             {
                 PackagesFolderNuGetProject = project
             };
+
+            bool allowPrereleaseVersions = true;
+            bool allowUnlisted = false;
+
+            ResolutionContext resolutionContext = new ResolutionContext(
+            DependencyBehavior.Lowest, allowPrereleaseVersions, allowUnlisted, VersionConstraints.None); 
+            INuGetProjectContext projectContext = new DefaultProjectContext();
+
+            IEnumerable<SourceRepository> sourceRepositories = Enumerable.Repeat(_packageSearcher.GetSourceRepository(),1); 
+            await packageManager.InstallPackageAsync(packageManager.PackagesFolderNuGetProject,
+            identity, resolutionContext, projectContext, sourceRepositories,
+            Array.Empty<SourceRepository>(), 
+            CancellationToken.None);
         }
 
         private List<Lazy<INuGetResourceProvider>> GetV3AndV2Providers()
@@ -59,25 +76,5 @@ namespace Horus.HandlerFactory.PackageInstaller
     }
 }
 
-/* 
-    PackageIdentity identity = new PackageIdentity(...);
-    ISourceRepositoryProvider sourceRepositoryProvider = ...;  // See part 2
-    string rootPath = "...";
-    string packagesPath = "...";
-    ISettings settings = Settings.LoadDefaultSettings(rootPath, null, new MachineWideSettings());
-    NuGetProject project = new FolderNuGetProject(rootPath);
-    NuGetPackageManager packageManager = new NuGetPackageManager(sourceRepositoryProvider, settings, packagesPath)
-    {
-        PackagesFolderNuGetProject = project
-    };
-    bool allowPrereleaseVersions = true;
-    bool allowUnlisted = false;
-    ResolutionContext resolutionContext = new ResolutionContext(
-        DependencyBehavior.Lowest, allowPrereleaseVersions, allowUnlisted, VersionConstraints.None);    
-    INuGetProjectContext projectContext = new ProjectContext();
-    IEnumerable<SoureRepository> sourceRepositories = ...;  // See part 2
-    await packageManager.InstallPackageAsync(packageManager.PackagesFolderNuGetProject,
-        identity, resolutionContext, projectContext, sourceRepositories,
-        Array.Empty<SourceRepository>(),  // This is a list of secondary source respositories, probably empty
-        CancellationToken.None);
- */
+
+

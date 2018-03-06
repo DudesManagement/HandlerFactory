@@ -16,13 +16,13 @@ namespace Horus.HandlerFactory.PackageSearcher
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
 
-        public DefaultPackageSearcher(ILogger logger, IConfiguration configuration)
+        internal DefaultPackageSearcher(ILogger logger, IConfiguration configuration)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
         }
         
-        public async Task<IPackageSearchMetadata> GetSinglePackageMetaDataAsync()
+        internal async Task<IPackageSearchMetadata> GetSinglePackageMetaDataAsync()
         {
             var enumerableResult = await GetPackagesMetaDataAsync();
             var enumerator = enumerableResult.GetEnumerator();
@@ -61,7 +61,7 @@ namespace Horus.HandlerFactory.PackageSearcher
             return providers;
         }
 
-        private SourceRepository GetSourceRepository()
+        public SourceRepository GetSourceRepository()
         {
             var providers = GetV3AndV2Providers();
 

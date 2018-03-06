@@ -27,5 +27,7 @@ namespace Horus.HandlerFactory.PackageSearcher
         /// <param name="searchFilter"></param>
         /// <returns></returns>
         Task<IEnumerable<IPackageSearchMetadata>> GetPackagesMetaDataFullSearchAsync(SearchFilter searchFilter);
+
+        SourceRepository GetSourceRepository();
     }
 }
